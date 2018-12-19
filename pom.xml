@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>net.agilhard.example</groupId>
+  <artifactId>jlink-distroless-maven-example</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>9</maven.compiler.source>
+    <maven.compiler.target>9</maven.compiler.target>
+
+    <version.netAgilhardMavenPlugins.jlinkJpackagerMavenPlugin>1.0.0-SNAPSHOT</version.netAgilhardMavenPlugins.jlinkJpackagerMavenPlugin>
+
+    <!-- do not use version greater than 2.7 because it does handle symlinks differently -->
+    <version.orgApacheMavenPlugins.mavenResourcesPlugin>2.7</version.orgApacheMavenPlugins.mavenResourcesPlugin>
+
+    <version.ioFabric8.dockerMavenPlugin>0.27.2</version.ioFabric8.dockerMavenPlugin>
+    <version.orgApacheMavenPlugins.mavenJarPlugin>3.1.0</version.orgApacheMavenPlugins.mavenJarPlugin>
+  </properties>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>net.agilhard.maven.plugins</groupId>
+          <artifactId>jlink-jpackager-maven-plugin</artifactId>
+	  <version>${version.netAgilhardMavenPlugins.jlinkJpackagerMavenPlugin}</version>
+	  <extensions>true</extensions>
+	</plugin>
+	<plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+	  <groupId>org.apache.maven.plugins</groupId>
+          <version>${version.orgApacheMavenPlugins.mavenResourcesPlugin}</version>
+	</plugin>
+	
+	<plugin>
+          <groupId>io.fabric8</groupId>
+          <artifactId>docker-maven-plugin</artifactId>
+	  <version>${version.ioFabric8.dockerMavenPlugin}</version>
+	</plugin>
+	<plugin>
+	  <groupId>org.apache.maven.plugins</groupId>
+	  <artifactId>maven-jar-plugin</artifactId>
+	  <version>${version.orgApacheMavenPlugins.mavenJarPlugin}</version>
+	</plugin>	
+      </plugins>	
+    </pluginManagement>
+  </build>
+  
+  <modules>
+    <module>jlink-distroless-example-app</module>
+    <module>jlink-distroless-example-package</module>
+  </modules>
+  
+</project>
