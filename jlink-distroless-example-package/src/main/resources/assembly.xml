@@ -5,7 +5,7 @@
       <includes>
         <include>bin/*</include>
       </includes>
-      <directory>${project.build.directory}/maven-jlink</directory>
+      <directory>${project.build.directory}/jlink</directory>
       <outputDirectory>jlink</outputDirectory>
       <fileMode>0755</fileMode>
     </fileSet>
@@ -16,7 +16,7 @@
         <include>include/**</include>
         <include>legal/**</include>
       </includes>
-      <directory>${project.build.directory}/maven-jlink</directory>
+      <directory>${project.build.directory}/jlink</directory>
       <outputDirectory>jlink</outputDirectory>
       <fileMode>0644</fileMode>
     </fileSet>

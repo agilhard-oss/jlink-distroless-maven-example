@@ -13,7 +13,7 @@
 
   <properties>
     <docker.registry>localhost:80</docker.registry>
-    <docker.baseimage>gcr.io/distroless/base</docker.baseimage>
+    <docker.baseimage>gcr.io/distroless/base:latest</docker.baseimage>
   </properties>
   <build>
     <plugins>
@@ -73,12 +73,17 @@
                   <name>agilhard/jlink-distroless-example</name>
 		  <registry>${docker.registry}</registry>
 		  <build>
+		  <env>
+		    <JAVA_HOME>/jlink/bin</JAVA_HOME>
+		  </env>
 		    <entryPoint>
+
 		      <exec>
 			<arg>/jlink/bin/java</arg>
 			<arg>-m</arg>
 			<arg>app/net.agilhard.example.HelloWorld</arg>
 		      </exec>
+
 		    </entryPoint>
 		    <from>${docker.baseimage}</from>
 		    

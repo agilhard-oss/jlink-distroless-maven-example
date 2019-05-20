@@ -17,7 +17,7 @@
     <!-- do not use version greater than 2.7 because it does handle symlinks differently -->
     <version.orgApacheMavenPlugins.mavenResourcesPlugin>2.7</version.orgApacheMavenPlugins.mavenResourcesPlugin>
 
-    <version.ioFabric8.dockerMavenPlugin>0.27.2</version.ioFabric8.dockerMavenPlugin>
+    <version.ioFabric8.dockerMavenPlugin>0.30.0</version.ioFabric8.dockerMavenPlugin>
     <version.orgApacheMavenPlugins.mavenJarPlugin>3.1.0</version.orgApacheMavenPlugins.mavenJarPlugin>
   </properties>
 
